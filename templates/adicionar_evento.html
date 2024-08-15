@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Eventos</title>
+    <link rel="stylesheet" href="{% static 'css/adicionar_evento.css' %}" />
+    <link rel="icon" href="{% static 'images/logo.svg' %}" type="image/svg+xml">
+  </head>
+  <body id="container">
+    <nav id="menu">
+      <img src="/static/images/Eventure.png" alt="Logo Eventure" />
+      <a href="{% url 'evento_list' %}"
+        ><img src="{% static 'images/voltar.svg' %}" alt="" />
+        Voltar
+      </a>
+    </nav>
+    <h2>Novo Evento</h2>
+    <div id="form">
+      <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+    <footer>
+      <p>Desenvolvido por Gabriela Moura</p>
+    </footer>
+  </body>
+</html>

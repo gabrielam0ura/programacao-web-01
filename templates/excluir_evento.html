@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excluir Evento</title>
+    <link rel="stylesheet" href="{% static 'css/excluir_evento.css' %}" />
+  </head>
+  <body>
+    <nav id="menu">
+      <img src="{% static 'images/Eventure.png' %}" alt="Logo Eventure" />
+      <a href="{% url 'evento_list' %}"
+        ><img src="{% static 'images/voltar.svg' %}" alt="" />
+        Voltar
+      </a>
+    </nav>
+    <div id="container-geral-excluir">
+      <p>Excluir o evento "{{ evento.titulo }}"?</p>
+      <div id="resposta">
+        <form method="post">
+          {% csrf_token %}
+          <button type="submit">Excluir</button>
+        </form>
+        <div id="cancelar">
+          <a href="{% url 'evento_list' %}">Cancelar</a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Desenvolvido por Gabriela Moura</p>
+    </footer>
+  </body>
+</html>

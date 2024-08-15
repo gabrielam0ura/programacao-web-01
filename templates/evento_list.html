@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Eventos</title>
+    <link rel="stylesheet" href="{% static 'css/evento_list.css' %}" />
+    <link rel="icon" href="{% static 'images/logo.svg' %}" type="image/svg+xml">
+  </head>
+  <body>
+    <nav id="menu">
+      <img src="{% static 'images/Eventure.png' %}" alt="Logo Eventure" />
+      <a href="{% url 'adicionar_evento' %}">Novo Evento
+        <img src="{% static 'images/plus.svg' %}" alt="" />
+      </a>
+    </nav>
+    <div id="container-geral-lista">
+      <div id="eventos-container">
+        {% for evento in eventos %}
+        <a href="{% url 'evento_detail' pk=evento.pk %}" class="evento-link">
+          <div class="evento-card">
+            <div class="efeito"></div>
+            <h2>{{ evento.titulo }}</h2>
+            <p>{{ evento.get_tipo_display }}</p>
+            <p>{{ evento.data_inicio }}</p>
+            <p>{{ evento.local }}</p>
+          </div>
+        </a>
+        {% empty %}
+        <p>Nenhum evento encontrado.</p>
+        {% endfor %}
+      </div>
+    </div>
+    <footer>
+      <p>Desenvolvido por Gabriela Moura</p>
+    </footer>
+  </body>
+</html>

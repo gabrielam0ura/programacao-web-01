@@ -1,0 +1,122 @@
+/* Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Menu */
+#menu {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    height: 70px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(0, 184, 184);
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+#menu img {
+    height: 17px;
+    width: auto;
+}
+
+#menu a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Conteúdo */
+#container-geral-lista {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+#eventos-container {
+    margin-top: 70px;
+    width: 85%;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.evento-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.evento-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    padding: 10px;
+    width: 190px;
+    height: 220px;
+    gap: .7rem;
+    border: 2px solid rgb(0, 184, 184);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evento-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.evento-card h2 {
+    font-size: 23px;
+    margin: 0 auto 10px;
+}
+
+.efeito {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px; 
+    background-color: rgb(0, 184, 184);
+    margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 184, 184);
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+footer p {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #eventos-container {
+        width: 100%;
+    }
+}
